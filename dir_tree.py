@@ -12,7 +12,7 @@ def walktree(root):
         elif stat.S_ISREG(mode):
             print(file)
         else:
-            print("unkown file type")
+            print("unknown file type")
 
 
 if __name__ == "__main__":
