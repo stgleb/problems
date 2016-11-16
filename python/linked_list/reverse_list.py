@@ -16,7 +16,7 @@ def reverse(head):
         nxt = nxt.next
 
     cur.next = prev
-    
+
     return cur
 
 if __name__ == "__main__":
