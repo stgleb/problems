@@ -7,16 +7,16 @@ def find_subarray(arr, target):
     l, r = 0, 0
     sum = 0
 
-    for i in range(len(arr)):
-        if sum < target:
-            sum += arr[r]
-        elif sum > target:
+    while r < len(arr):
+        sum += arr[r]
+        r += 1
+
+        while sum > target:
             sum -= arr[l]
             l += 1
-        else:
-            return l, r
 
-        r += 1
+        if sum == target:
+            return l, r
 
     return -1, -1
 
