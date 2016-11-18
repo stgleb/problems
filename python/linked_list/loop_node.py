@@ -18,6 +18,10 @@ def find_loop_node(head):
 
         while fast != slow:
             fast = fast.next
+
+            if fast == slow:
+                return slow.value
+
             slow = slow.next
 
         return slow.value
@@ -31,6 +35,6 @@ if __name__ == "__main__":
     node3 = Node(3, node4)
     node2 = Node(2, node3)
     node1 = Node(1, node2)
-    node5.next = node4
+    node5.next = node2
 
     print(find_loop_node(node1))
