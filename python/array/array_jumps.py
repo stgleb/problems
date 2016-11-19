@@ -7,7 +7,7 @@
 """
 
 
-def solution(A):
+def get_jumps_count(A):
     escapable = False
     position = 0
     count = 0
@@ -37,4 +37,4 @@ def solution(A):
 
 if __name__ == '__main__':
     A = [1, 1, -1, 1]
-    print(solution(A))
+    print(get_jumps_count(A))
