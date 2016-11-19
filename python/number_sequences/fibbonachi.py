@@ -33,7 +33,7 @@ def qpow(a, n):
     return res
 
 
-def solution(N):
+def fibbonachi(N):
     A = [[1, 1], [1, 0]]
     num = qpow(A, N)[1][1]
 
@@ -41,4 +41,4 @@ def solution(N):
 
 
 if __name__ == "__main__":
-    print(solution(8))
+    print(fibbonachi(8))
