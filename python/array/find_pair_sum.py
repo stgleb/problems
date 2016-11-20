@@ -7,7 +7,7 @@ O(N).
 
 def solution(A, K):
     d = dict()
-    
+
     for v in A:
         d[v] = True
         tmp = K - v
