@@ -1,6 +1,6 @@
 """
-    Found all possible index pairs Q and P
-    where A[Q] + A[P] == K for given K
+Found all possible index pairs Q and P
+where A[Q] + A[P] == K for given K
 """
 
 
@@ -41,8 +41,36 @@ def get_pairs_count(K, A):
 
     return count
 
+
+def get_pairs_count2(K, A):
+    d = dict()
+    count = 0
+
+    for val in A:
+        if val in d:
+            d[val] += 1
+        else:
+            d[val] = 1
+
+    for val in A:
+        tmp = K - val
+
+        if tmp in d:
+            first = d[tmp]
+            second = d[val]
+
+            if tmp != val:
+                count += first * second * 2
+            else:
+                count += 1
+            d[val] = 0
+
+    return count
+
+
 if __name__ == "__main__":
     A = [1, 8, -3, 0, 1, 3, -2, 4, 5]
     print(get_pairs_count(6, A))
+    print(get_pairs_count2(6, A))
     # A = [1, 1, 1]
     # print(solution(A, 2))
