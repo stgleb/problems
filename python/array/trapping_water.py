@@ -32,7 +32,26 @@ def trapping_water(a):
     return count
 
 
+def trapping_rain_water_precomputed(a):
+    left_max = [0 for _ in range(len(a))]
+    right_max = [0 for _ in range(len(a))]
+    water = 0
+    left_max[0] = a[0]
+
+    for i in range(1, len(a)):
+        left_max[i] = max(a[i], left_max[i - 1])
+
+    right_max[-1] = a[-1]
+    for i in range(len(a) - 2, -1, -1):
+        right_max[i] = max(a[i], right_max[i + 1])
+
+    for i in range(len(a)):
+        water += min(left_max[i], right_max[i]) - a[i]
+
+    return water
+
 if __name__ == "__main__":
     # 2 + 1 + 3 + 1 + 1 = 8
     a = [3, 1, 2, 0, 4, 1, 1, 2]
     print(trapping_water(a))
+    print(trapping_rain_water_precomputed(a))
