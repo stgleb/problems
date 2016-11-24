@@ -13,9 +13,9 @@ def dfs(root):
 
 def mirror_tree(root):
     if root:
-        root.left, root.right = root.right, root.left
         mirror_tree(root.left)
         mirror_tree(root.right)
+        root.left, root.right = root.right, root.left
 
 
 if __name__ == "__main__":
