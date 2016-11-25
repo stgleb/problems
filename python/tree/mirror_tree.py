@@ -18,6 +18,18 @@ def mirror_tree(root):
         root.left, root.right = root.right, root.left
 
 
+def is_mirror(root1, root2):
+    if root1 is None and root2 is None:
+        return True
+
+    if root1 is None or root2 is None:
+        return False
+
+    return root1.value == root2.value \
+           and is_mirror(root1.left, root2.right) \
+           and is_mirror(root1.right, root2.left)
+
+
 if __name__ == "__main__":
     node1 = Node(1)
     node2 = Node(2)
