@@ -1,3 +1,9 @@
+"""
+Swap three variables a,b,c without using temporary variable
+
+1, 2, 3 -> 3, 1, 2
+"""
+
 def swap_arithm(a, b, c):
     a = a + b + c
     b = a - b - c
