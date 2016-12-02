@@ -5,7 +5,7 @@ Given preorder traversal of a binary search tree, construct the BST.
 from python.tree.node import Node
 
 
-def recostruct(arr):
+def reconstruct(arr):
     if not arr:
         return
 
@@ -16,8 +16,8 @@ def recostruct(arr):
     while i < len(arr[1:]) and arr[i] < arr[0]:
         i += 1
 
-    left_root = recostruct(arr[1:i])
-    right_root = recostruct(arr[i:])
+    left_root = reconstruct(arr[1:i])
+    right_root = reconstruct(arr[i:])
 
     root.left = left_root
     root.right = right_root
@@ -45,7 +45,7 @@ def preorder_traversal(root):
 
 if __name__ == "__main__":
     arr = [10, 5, 1, 7, 40, 50]
-    root = recostruct(arr)
+    root = reconstruct(arr)
     inorder_traversal(root)
     print("---------------------")
     preorder_traversal(root)
