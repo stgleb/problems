@@ -38,7 +38,13 @@ def shift_array(A, K):
         _shift(A)
 
 
+def array_shift_functional(A, K):
+    n = len(A)
+    return [A[(index - K) % n] for index, value in enumerate(A)]
+
+
 if __name__ == "__main__":
     A = [3, 8, 9, 7, 6]
+    print(array_shift_functional(A, 3))
     shift_array(A, 3)
     print(A)
