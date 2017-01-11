@@ -17,5 +17,19 @@ def fizz_buzz(n):
             print(i)
 
 
+def fizz_buzz2(n):
+    strs = ["" for _ in range(n + 1)]
+
+    for i in range(0, n + 1, 3):
+        strs[i] += "Fizz"
+
+    for i in range(0, n + 1, 5):
+        strs[i] += "Buzz"
+
+    for i in range(n + 1):
+        print("{0} {1}".format(i, strs[i]))
+
+
 if __name__ == "__main__":
-    fizz_buzz(100)
+    # fizz_buzz(100)
+    fizz_buzz2(100)
